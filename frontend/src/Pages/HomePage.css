@@ -1,0 +1,67 @@
+    /* HomePage.css */
+/* HomePage.css */
+.changeColour {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the container full height of the viewport */
+    background-color: #d68080; /* Change this to the desired background color */
+  }
+
+  .navBarColour{
+    background-color: aqua;
+  }
+  
+  .playlist-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Ensure no wrapping of items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    overflow-x: auto; /* Add horizontal scrolling if needed */
+  }
+  
+  .playlist-container::-webkit-scrollbar {
+    height: 8px; /* Adjust the height of the scrollbar */
+  }
+  
+  .playlist-container::-webkit-scrollbar-thumb {
+    background: #888; /* Customize the scrollbar color */
+    border-radius: 4px; /* Round the scrollbar edges */
+  }
+  
+  .playlist-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darken the scrollbar on hover */
+  }
+  
+  .playlist-container > * {
+    margin-right: 16px; /* Add space between cards */
+  }
+  
+  
+  .playlist-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Ensure no wrapping of items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    overflow-x: auto; /* Add horizontal scrolling if needed */
+  }
+  
+  .playlist-container::-webkit-scrollbar {
+    height: 8px; /* Adjust the height of the scrollbar */
+  }
+  
+  .playlist-container::-webkit-scrollbar-thumb {
+    background: #888; /* Customize the scrollbar color */
+    border-radius: 4px; /* Round the scrollbar edges */
+  }
+  
+  .playlist-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darken the scrollbar on hover */
+  }
+  
+  .playlist-container > * {
+    margin-right: 16px; /* Add space between cards */
+  }
+  
