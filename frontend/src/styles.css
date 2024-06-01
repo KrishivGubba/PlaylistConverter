@@ -1,0 +1,11 @@
+/* styles.css */
+.scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .scrollable-container > * {
+    flex: 0 0 auto;
+  }
+  

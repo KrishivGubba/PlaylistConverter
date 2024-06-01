@@ -1,0 +1,4 @@
+unresolved issues:
+
+1. for some reason, the session data LAGS by one. so when you first hit submit and try printing out the session data,
+it is an EMPTY array???? then once you press it again, it is updated. it's behind by one for some reason, god knows why.

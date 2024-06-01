@@ -1,0 +1,20 @@
+/* PlaylistForm.css */
+
+.playlist-entry {
+  height: 10%;
+  margin-top: 200px;
+  margin-left: 500px;
+  width: 50%; /* Set the width to 100% of its container */
+  }
+  
+  .playlist-input {
+    width: 100%; /* Set the width of the input field to 100% of its container */
+    padding: 10px; /* Add padding for better visual appearance */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+  
+  .playlist-button {
+    width: 100%; /* Set the width of the button to 100% of its container */
+    margin-top: 10px; /* Add margin at the top of the button */
+  }
+  

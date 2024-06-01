@@ -1,0 +1,13 @@
+/* PlaylistCard.css */
+
+.playlist-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .playlist-card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+  
