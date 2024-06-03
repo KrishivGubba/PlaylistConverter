@@ -41,14 +41,14 @@ function HomePage() {
         console.log('Data sent successfully');
         console.log(playlists)
         setPlaylists(await response.json())
-        sessionStorage.setItem("savedData",JSON.stringify(playlists))        //s
+        sessionStorage.setItem("savedData",JSON.stringify(playlists))
       } catch (error) {
         console.error('Error sending data:', error);
       }
       setIsButtonDisabled(false) //re enabling the button now that the whole method has finished running.
     };
 
-    const spotifyRedirectButton = async () => {
+    const spotifyRedirectButton = async () => { //redirects to spotify user authentication page upon being clicked.
       try {
         const response = await fetch('http://localhost:5000/spotify_redirect_url');
         if (!response.ok) {
@@ -61,21 +61,20 @@ function HomePage() {
       } 
     };
 
-    return (
+    return ( //page structure.
       <>
     <div className='changeColour'>
       <NavBar/>
       <PlaylistForm onSubmit={buttonPress} onChange={formChange} id = "he"/>
       <div className="playlist-container">
-        {playlists.map((playlist, index) => (
+        {playlists.map((playlist, index) => ( //iterating through the playlist data to build the cards.
           <PlaylistCard
-            key={index} // Provide a unique key for each PlaylistCard
+            key={index} 
             image={playlist.image}
             description={playlist.description}
             title={playlist.title}
             tracks={playlist.tracks}
           >
-            {/* You can render additional content inside PlaylistCard if needed */}
           </PlaylistCard>
         ))}
       </div>
@@ -84,9 +83,5 @@ function HomePage() {
       </>
     );
   }
-
-
-
-
 
 export default HomePage;
