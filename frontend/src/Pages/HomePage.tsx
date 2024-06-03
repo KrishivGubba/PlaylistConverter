@@ -1,18 +1,9 @@
-import logo from './logo.svg';
-// import './App.css';
 import PlaylistForm from './Components/form.tsx';
-import Button from './Components/Button.tsx'
 import React, {useState, useEffect} from 'react'
 import PlaylistCard from './Components/PlaylistCard.tsx'
-// import './index.js'
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { buildQueries } from '@testing-library/react';
-// import './PlaylistCard.css'; // Import CSS file with styles
 import NavBar from './Components/NavBar.tsx'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-// import Help from './pages/Help'
 import './HomePage.css';
 
 
@@ -26,7 +17,6 @@ function HomePage() {
       toSend : ''
     })
     const formChange = (event) => {
-      // console.log(formData)
       const { value } = event.target; // Extract value from the input field
       setFormData({ ...formData, toSend: value }); // Update formData state with the new value
   };
@@ -39,7 +29,7 @@ function HomePage() {
       setIsButtonDisabled(true); //disabling it right now so that it is enabled once the rest of the method runs.
       try {
         const response = await fetch('http://localhost:5000/data', {
-          method: 'POST',
+          method: 'POST', //fetching the playlist data from the backend api
           headers: {
             'Content-Type': 'application/json'
           },
@@ -51,20 +41,14 @@ function HomePage() {
         console.log('Data sent successfully');
         console.log(playlists)
         setPlaylists(await response.json())
-        //need a for loop to print this out.
-        // console.log(playlists[0])
-        console.log(playlists)
         sessionStorage.setItem("savedData",JSON.stringify(playlists))
-        const savedDataString = sessionStorage.getItem('savedData');
-        console.log(JSON.parse(savedDataString)); //stupid error you can completely ignore it.
-        
       } catch (error) {
         console.error('Error sending data:', error);
       }
       setIsButtonDisabled(false) //re enabling the button now that the whole method has finished running.
     };
 
-    const spotifyRedirectButton = async () => {
+    const spotifyRedirectButton = async () => { //redirects to spotify user authentication page upon being clicked.
       try {
         const response = await fetch('http://localhost:5000/spotify_redirect_url');
         if (!response.ok) {
@@ -77,21 +61,20 @@ function HomePage() {
       } 
     };
 
-    return (
+    return ( //page structure.
       <>
     <div className='changeColour'>
       <NavBar/>
       <PlaylistForm onSubmit={buttonPress} onChange={formChange} id = "he"/>
       <div className="playlist-container">
-        {playlists.map((playlist, index) => (
+        {playlists.map((playlist, index) => ( //iterating through the playlist data to build the cards.
           <PlaylistCard
-            key={index} // Provide a unique key for each PlaylistCard
+            key={index} 
             image={playlist.image}
             description={playlist.description}
             title={playlist.title}
             tracks={playlist.tracks}
           >
-            {/* You can render additional content inside PlaylistCard if needed */}
           </PlaylistCard>
         ))}
       </div>
@@ -100,9 +83,5 @@ function HomePage() {
       </>
     );
   }
-
-
-
-
 
 export default HomePage;
