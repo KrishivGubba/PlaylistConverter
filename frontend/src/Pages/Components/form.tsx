@@ -19,7 +19,6 @@ const PlaylistForm: React.FC<Props> = ({ onSubmit, state, onChange, id }) => {
 const formChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
     state = event.target.value;
     onChange(event);
-    // console.log(state);
   }
 
   return (
