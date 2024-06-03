@@ -2,24 +2,9 @@
 
 This project allows you to transfer playlists from YouTube Music to Spotify. By using the YouTube Music API and Spotify API, the application retrieves a playlist from a YouTube Music account, searches for the songs on Spotify, retrieves their Spotify IDs, creates a new playlist on Spotify, and adds the songs to this new playlist.
 
-## Table of Contents
+## How it Works
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
+1. User input
+   The user inputs the playlist id that
+   ![image](https://github.com/KrishivGubba/PlaylistConverter/assets/158531751/8ada847e-186d-4dae-92d3-d14e06810deb)
 
-## Installation
-
-### Prerequisites
-
-- Python 3.7+
-- [pip](https://pip.pypa.io/en/stable/installation/)
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/yt-to-spotify-playlist.git
-cd yt-to-spotify-playlist
