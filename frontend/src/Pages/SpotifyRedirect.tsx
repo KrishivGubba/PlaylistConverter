@@ -9,8 +9,8 @@ function SpotifyRedirect() {
     const ConvertPlaylists = async () =>{
        let location = window.location.href; //this is the location of the current webpage.
        //must send this location back to flask because it contains the user auth CODE that
-       //can be used to create the playlist we need.
-       let savedDataString = JSON.parse(sessionStorage.getItem('savedData'));
+       //can be used to create the playlist needed.
+       let savedDataString = JSON.parse(sessionStorage.getItem('savedData')); //accessing session data.
        console.log(savedDataString)
        try {
         const response = await fetch('http://localhost:5000/spotify_callback', {

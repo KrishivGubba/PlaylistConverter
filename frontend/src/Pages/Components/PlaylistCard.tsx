@@ -1,3 +1,4 @@
+//code for the playlist card component that displays the details corresponding to each playlist.
 import React, { useState, useRef } from 'react';
 
 interface Props {
