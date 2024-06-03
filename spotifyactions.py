@@ -59,7 +59,6 @@ class SpotifyActions:
         headers = self.get_auth_header(token)
         result = requests.get(url, headers=headers)
         final = json.loads(result.content)["tracks"]["items"]
-        print(final)
         dict = {}
         for row in final:
             dict[row["track"]["name"]] = row["track"]["artists"]
@@ -139,20 +138,12 @@ class SpotifyActions:
         track_id = jresult['tracks']['items'][0]['uri'].split(':')[-1]
         return track_id
 
-    def new_add(self,playlistid,ids,userid):
-        scope = "playlist-modify-public"
-
-        token = SpotifyOAuth(scope=scope, username=userid,
-                             client_id=self.client_id,
-                             client_secret=self.client_secret,
-                             redirect_uri="http://localhost:3000/spotify_redirect")
-        spotifyobj = spotipy.Spotify(auth_manager=token)
-
     def getUserID(self, access_token):
         url = "https://api.spotify.com/v1/me"
         headers = {
             "Authorization": f"Bearer {access_token}"
         }
+        print("HI")
 
         try:
             response = requests.get(url, headers=headers)
