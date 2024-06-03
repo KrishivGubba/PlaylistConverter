@@ -148,10 +148,6 @@ class SpotifyActions:
                              redirect_uri="http://localhost:3000/spotify_redirect")
         spotifyobj = spotipy.Spotify(auth_manager=token)
 
-        # spotifyobj.playlist_add_items(playlist_id=playlistid,
-        #                               items=ids)
-        print("this is the current user", spotifyobj.current_user())
-
     def getUserID(self, access_token):
         url = "https://api.spotify.com/v1/me"
         headers = {
@@ -171,35 +167,3 @@ class SpotifyActions:
         except Exception as err:
             # Print any other error messages
             print(f"An error occurred: {err}")
-
-
-        # playlist_data = response.json()
-        # playlist_id = playlist_data["id"]
-
-
-new  = SpotifyActions("799f8ff7f87241c391b9c87d7a2bd5a8","d8ea189405cc433da7c4c849d165e49c")
-
-# someting = "BQBNzCKfTx9YCUlUiIwUgpZeX5yvcxyv9N64ogEWt83WPXzXEqetX6a-wle6D-ZK3jYjm-ZENDfXCAVjppQ4FkBr2mijoCrB935pW5br6Fp4ByOedIJAn6Metho4VboKrcIcYZb1smOUs_-CtjjSgSDQ9fbhN1IF_lVprR3bsc02jZ8KzkKg5bk8RGu_9wQLHIHdTf4gOADSCH9oYR3nYFX8OoEPmaZ7tXoLHJNSJE23tsh6Qzj2RKNm7frxGQjWmeTLKrNkVPrs2P4R8qh6TchVpw"
-# new.search_song("rapstar","polo g")
-# token = new.getuserToken(new.userAuth())
-
-# lst = []
-# for key in songs:
-#     songname = ""
-#     artist = ""
-#     songname = key
-#     for dict in songs[key]:
-#         artist += dict["name"] + " "
-#     id = new.search_song(token,songname,artist)
-#     lst.append(id)
-#
-# print(lst)
-# new.create_playlist("k4rizkoy0o6o8feiri9agz9m4","token","carit")
-
-# ids  = ['1BpKJw4RZxaFB88NE5uxXf', '08dz3ygXyFur6bL7Au8u8J', '29TPjc8wxfz4XMn21O7VsZ', '7rbalRuIx7sIXFHYTphE0n', '42VsgItocQwOQC3XWZ8JNA', '3L0IKstjUgDFVQAbQIRZRv', '54g08crXuFrb6m2M2MwR4x', '3cWmqvMwVQKDigWLSZ3w9h', '4CzhtKifG867Lu5DNQVBSA', '500l6Cwe40hkPqS7Sf7ufY', '3yk7PJnryiJ8mAPqsrujzf', '2lLG56qpLP3UbcLuzMvkWX', '1s9DTymg5UQrdorZf43JQm', '2xyBvir9n474qfsOkxXMgx', '45Ln3F9PRPYTXBcMFkZMzS', '29TPjc8wxfz4XMn21O7VsZ', '1JgkiUg9mSXSwcb5Gbi4Ur', '0F13K9dwYH2zpTWiR8d628', '5MUxrNd7Gr2HksLcAlB0IO', '3dl8bSF08LQfCf4T6CCksf', '5nayhWICkQGMTkisxVMbRw', '15JRvf02KKGHKgC31jrpuh', '47Obor5zpUwTRLEQIX9woV', '23QyE9GQpXsX9WgEDADMa6', '4txKMpsSfZRV6durPuHVq0', '4IO2X2YoXoUMv0M2rwomLC', '3K6U7TamNyVSWcFH8pCQHX', '4CYTQpr2jc4uBScYvpEK2w', '30sc425JEvj3tgmGAKORea', '5wPyd3IQAZft1vmxoIqGrU', '5O9zs6G6RcB6yP1OKwnwiM', '475jSz0H6U3duJyNiDS0tT', '7ejepEh5DJ79YI6owGRfkk']
-# new.add_songs_to_playlist("3pDRcLIFtdcU6OqBEJJfXt","AQDwqSKhrOtHaszecvSAj6Duc9uuzn3htwApL4WeTnFu1its_D4HaINxlH6p-GjDpNCE9xp3HNwkYbFxHgAa8d9SNnzOFO5Tvc9HqDoUr33lVzDyn0F2e3BZIWVbGipXBJsQL-ghOj1CkM6egevQBgqwnxWbmgIDzba7Q1Mr2cHH_8zyXujDOhoqXSXWZJiNP1LXosWFTFN3jC10Z9pmX21jUd52usl88KU6CTMhuaChtOXQV6c_ygoLMSrKgFY9koJyDlmstdHT_jC3GpabX80Jl0YHDTTsHPCKRcC_BMuwZV-Ry3vHKX_LH4ilVVOCROeSa_gtmppHOpD1dOJXgqDWGsNBnV05EDbIm2dxbGbcYvg",["1BpKJw4RZxaFB88NE5uxXf"])
-
-CLIENT_ID = "799f8ff7f87241c391b9c87d7a2bd5a8"
-CLIENT_SECRET = "d8ea189405cc433da7c4c849d165e49c"
-spot = SpotifyActions(CLIENT_ID, CLIENT_SECRET)
-token = spot.get_token()
