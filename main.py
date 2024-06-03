@@ -41,14 +41,6 @@ def spotifycallback():
         nameURLhashmap[i] = output
     return nameURLhashmap
 
-@app.route('/save_playlist_id', methods=['POST'])
-def save_playlist_id():
-    playlist_id = request.form.get('playlist_id')
-    session['playlist_id'] = playlist_id
-    # Here, you can save the playlist ID to a database, session, or any other storage mechanism
-    # Redirect the user to the /authorize page
-    return redirect('/authorize')
-
 @app.route('/data', methods=['POST'])
 def receive_data():
     data = request.json
