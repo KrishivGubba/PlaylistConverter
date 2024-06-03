@@ -2,7 +2,7 @@ from flask import Flask, redirect, request, render_template, session, jsonify
 from spotifyactions import SpotifyActions
 from dotenv import load_dotenv
 import os
-from applemus import youtubemusic
+from ytmus import youtubemusic
 from flask_cors import CORS
 from urllib.parse import urlparse, parse_qs
 
