@@ -6,10 +6,8 @@ from applemus import youtubemusic
 from flask_cors import CORS
 from urllib.parse import urlparse, parse_qs
 
-
+#creating the object that will get data off of youtube music.
 tube = youtubemusic()
-
-
 
 load_dotenv()
 client_id = os.getenv("CLIENT_ID")
@@ -35,32 +33,14 @@ def spotifycallback():
     code = params.get('code', [None])[0]
     # #now we generate an access token with the user code.
     access_token = spotify_actions.getuserToken(code)
-    print("this is the access token   ",access_token)
     user_id = spotify_actions.getUserID(access_token=access_token)
-    print(user_id)
-    print("THESE ARE THE PLAYLIST IDS:")
     nameURLhashmap = {}
     for i in range(len(inputData[1])):
         output = spotify_actions.create_playlist(user_id,access_token,inputData[1][i]["title"],
                                               tube.getplaylist(inputData[1][i]["id"]),
                                               description=inputData[1][i]["description"],image=inputData[1][i]["image"])
         nameURLhashmap[i] = output
-    
-    # print(inputData[1][0])
-    # firstSong = tube.getplaylist(session["playlist_ids"][0])
-    # print(spotify_actions.create_playlist(user_id,access_token,inputData[1][0]["title"],tube.getplaylist(inputData[1][0]["id"]),description=inputData[1][0]["description"],image=inputData[1][0]["image"]))
     return nameURLhashmap
-    
-    # authcode = request.args.get('code')
-    # if authcode:
-    #     access_token = spotify_actions.getuserToken(authcode)
-    #     print("hello this happened", spotify_actions.getUserID(access_token=access_token))
-    #     # spotify_actions.create_playlist("k4rizkoy0o6o8feiri9agz9m4",access_token,"new playlist")
-    #     #TODO: find a way to send an http request to get the user's user id.
-    #     return render_template("getplaylist.html",access_token = access_token)
-    #     # Perform actions with access_token
-    # else:
-    #     return "Authorization code not generated?"
 
 @app.route('/submit', methods=['POST'])
 def submit_form():
