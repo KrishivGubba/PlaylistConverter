@@ -6,27 +6,6 @@ from requests import get
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-
-songs = {'ILoveUIHateU': [{'name': 'Playboi Carti'}], 'Over': [{'name': 'Playboi Carti'}], 'R.I.P.': [{'name': 'Playboi Carti'}],
-         'Die4Guy': [{'name': 'Playboi Carti'}], 'FE!N (feat. Playboi Carti)': [{'name': 'Travis Scott'}, {'name': 'Playboi Carti'}],
-         'Not PLaying': [{'name': 'Playboi Carti'}], 'Long Time - Intro': [{'name': 'Playboi Carti'}],
-         'Rockstar Made': [{'name': 'Playboi Carti'}], 'Vamp Anthem': [{'name': 'Playboi Carti'}],
-         'Foreign': [{'name': 'Playboi Carti'}], 'Location': [{'name': 'Playboi Carti'}],
-         'Stop Breathing': [{'name': 'Playboi Carti'}], 'Fell In Luv (feat. Bryson Tiller)': [{'name': 'Playboi Carti'}, {'name': 'Bryson Tiller'}],
-         'Flex': [{'name': 'Playboi Carti'}, {'name': 'Leven Kali'}], 'R.I.P. Fredo (feat. Young Nudy) - Notice Me': [{'name': 'Playboi Carti'},
-        {'name': 'Young Nudy'}], 'Sky': [{'name': 'Playboi Carti'}], 'Lean 4 Real (feat. Skepta)': [{'name': 'Playboi Carti'}, {'name': 'Skepta'}],
-         'Go2DaMoon (feat. Kanye West)': [{'name': 'Playboi Carti'}, {'name': 'Kanye West'}], 'Yah Mean': [{'name': 'Playboi Carti'}],
-         'On That Time': [{'name': 'Playboi Carti'}], 'FlatBed Freestyle': [{'name': 'Playboi Carti'}], 'Meh': [{'name': 'Playboi Carti'}],
-         'Beef': [{'name': 'Ethereal'}, {'name': 'Playboi Carti'}], 'Let It Go': [{'name': 'Playboi Carti'}], 'New Tank': [{'name': 'Playboi Carti'}],
-         'Place': [{'name': 'Playboi Carti'}], 'Love Hurts (feat. Travis Scott)': [{'name': 'Playboi Carti'}, {'name': 'Travis Scott'}],
-         'Beno!': [{'name': 'Playboi Carti'}], 'New Choppa': [{'name': 'Playboi Carti'}, {'name': 'A$AP Rocky'}],
-         'Home (KOD)': [{'name': 'Playboi Carti'}], "Choppa Won't Miss (feat. Young Thug)": [{'name': 'Playboi Carti'}, {'name': 'Young Thug'}],
-         "Right Now (feat. Pi'erre Bourne)": [{'name': 'Playboi Carti'}, {'name': 'Pi’erre Bourne'}], 'New N3on': [{'name': 'Playboi Carti'}]}
-
-
-
-
-
 class SpotifyActions:
     def __init__(self, client_id, client_secret):
         self.client_id = client_id
@@ -64,8 +43,8 @@ class SpotifyActions:
             "Authorization": "Basic " + auth_base64,
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        data = {"grant_type": "client_credentials",
-                "scope": "playlist-modify-public playlist-modify-private"  # Add the required scopes here
+        data = {"grant_type" : "client_credentials",
+                "scope" : "playlist-modify-public playlist-modify-private"  # Add the required scopes here
                 }
         result = requests.post(url, headers=headers, data=data)
         json_result = json.loads(result.content)
