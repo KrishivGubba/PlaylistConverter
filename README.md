@@ -6,12 +6,13 @@ This project allows you to transfer playlists from YouTube Music to Spotify. By 
 
 1. User input
    The user inputs the unique playlist id that is associated with each playlist on Youtube Music. The data (song names and artists for each song) is saved.
+   
    ![image](https://github.com/KrishivGubba/PlaylistConverter/assets/158531751/16ba3425-a6e4-4379-9787-70e2903acd9f)
-2. Spotify Authentication
+3. Spotify Authentication
    To access and make changes within a user's account on spotify, one must grant certain permissions. The next steps only proceed if the user grants access to the web app.
-3. Song lookup
+4. Song lookup
    Using the previously saved data of each playlist, a search query that is of the following format: "<song name> <artist>" is provided to the Spotify API. This gives us the unique track id
    that for the song on spotify.
-4. Playlist creation and song additions
+5. Playlist creation and song additions
    The playlist is created, and songs are added one by one using the Spotify API.
 
