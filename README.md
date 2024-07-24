@@ -13,7 +13,7 @@ This project allows you to transfer playlists from YouTube Music to Spotify. By 
    To access and make changes within a user's account on spotify, one must grant certain permissions. The next steps only proceed if the user grants access to the web app.
 5. Song lookup
    
-   Using the previously saved data of each playlist, a search query that is of the following format: "<song name> <artist>" is provided to the Spotify API. This gives us the unique track id
+   Using the previously saved data of each playlist, a search query that is of the following format: "(songname) + (artist)" is provided to the Spotify API. This gives us the unique track id
    that for the song on spotify.
 7. Playlist creation and song additions
    
